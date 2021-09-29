@@ -23,16 +23,6 @@ void strchcat(char* str, char ch) {
 }
 
 bool includes(const char* str, const char* find) {
-  /*
-  Serial.println("<includes>");
-  Serial.println("<str>");
-  Serial.println(str);
-  Serial.println("</str>");
-  Serial.println("<find>");
-  Serial.println(find);
-  Serial.println("</find>");
-  Serial.println("</includes>");
-  */
   uint16_t len = strlen(str);
   uint16_t findlen = strlen(find);
   if (findlen > len)
