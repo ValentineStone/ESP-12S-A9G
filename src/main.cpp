@@ -123,7 +123,6 @@ void setup() {
   delay(3000);
   digitalWrite(A9G_PON, HIGH);
   while (!await("READY\r\n"));
-  A9G.flush();
   A9G.end();
   A9G.begin(A9G_BAUD_RATE_SLOW, SWSERIAL_8N1, A9G_RX, A9G_TX, false, 1200);
   Serial.println("Initializing...");
