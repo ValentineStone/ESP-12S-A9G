@@ -147,11 +147,11 @@ uint64_t last = 0;
 void loop() {
   if (millis() - last > 60000 || last == 0) {
     const auto boat_id = "4";
-    const auto lat = 55.973589;
-    const auto lon = 38.684297;
-    const auto speed = 10;
-    const auto rotation = 0;
-    const auto impact = 0;
+    const auto lat = 55.973589 + random(100) / 100000.;
+    const auto lon = 38.684297 + random(100) / 100000.;
+    const auto speed = (int) random(11);
+    const auto rotation = (int) random(360);
+    const auto impact = random(100) == 1 ? 1 : 0;
     char postcommand[512];
     snprintf(postcommand, 512,
       R"(AT+HTTPPOST="%s","%s","%s,%f,%f,%i,%i,%u")",
